@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% block css %} {% endblock %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %} {% endblock %}</title>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav id="mainNav">
+      <ol class="navOl">
+        <li><a href="#">Home</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#fun">Fun</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ol>
+    </nav>
+    <nav id="mobileNav">
+      <button class="mobileMenuBtn">
+        <i class="fa-solid fa-bars"></i>
+        <!-- Mobile Menu -->
+        <ol class="mobileNavOl">
+          <li><a href="#">Home</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#fun">Fun</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ol>
+      </button>
+    </nav>
+    <!-- End Of Navigation Bar -->
+    {% block content %} {% endblock %} {% block scripts %} {% endblock %}
+  </body>
+</html>

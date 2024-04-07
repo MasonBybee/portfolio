@@ -1,0 +1,143 @@
+{% extends 'base.html' %} {% block css%}
+<link rel="stylesheet" href="/static/index.css" />
+{% endblock %}{%block title%}Mason Bybee{% endblock %} {% block content %}
+<h1 class="greeting">Hello, I'm Mason</h1>
+<h2 class="title">Full-Stack Developer</h2>
+<h2 id="about">About Me</h2>
+<p>
+  &emsp; Hello! I'm Mason Bybee, a Full-Stack Developer. Though my journey into
+  coding is relatively recent, my background with computers is extensive and
+  rooted in a technology-focused upbringing. My interest in computers sparked at
+  a young age, leading me to build my own desktop computer by the age of 11. At
+  14, I delved into HTML and CSS, laying the groundwork for my technical skills,
+  though I didn't fully explore their potential at the time.
+</p>
+<p>
+  &emsp; My pivotal moment unfolded in early 2023. Confronted with a stagnant
+  career path, I made a decisive shift towards Software Development. This
+  transition reignited my passion for learning and led to a rapid expansion of
+  my technical skillset. I've not only refreshed my knowledge of HTML and CSS,
+  but I've also picked up a variety of programming languages and development
+  tools including JavaScript, React, express, Python, Flask, Pygame, Terminal,
+  and Git, among others. My ambition doesn't stop here; I am continually
+  striving to master new languages and refine my coding practices. My ultimate
+  goal is to channel these skills and experiences into becoming a proficient
+  Game Developer.
+</p>
+<h2 id="work">Work</h2>
+<p>Below are projects displaying my skills in web development</p>
+<div class="card-container">
+  <div class="card">
+    <h3 class="card-title">
+      <a target="_blank" href="http://172.232.10.66/">Pour & Explore</a>
+    </h3>
+    <img
+      class="card-img"
+      src="/static/assets/Portfolio/pour&Expore.PNG"
+      alt="Picture of Pour & Explore cocktail finder"
+    />
+    <p class="card-text">
+      Find new and exciting cocktails with my first capstone project!
+    </p>
+  </div>
+</div>
+<h2 id="fun">Fun</h2>
+<p>
+  These are a few projects I've made to challenge myself and have something fun
+  as the end result
+</p>
+<div class="card-container">
+  <div class="card">
+    <h3 class="card-title">
+      <a target="_blank" href="https://masonbybee.github.io/lightsout/"
+        >Lights Out</a
+      >
+    </h3>
+    <img
+      class="card-img"
+      src="/static/assets/Portfolio/lightsoout.PNG"
+      alt="Picture of Lights Out"
+    />
+    <p class="card-text"></p>
+  </div>
+  <div class="card">
+    <h3 class="card-title">
+      <a target="_blank" href="https://github.com/MasonBybee/Snake"
+        >Snake(WIP)</a
+      >
+    </h3>
+    <img
+      class="card-img"
+      src="/static/assets/Portfolio/snake.PNG"
+      alt="Picture of Snake Game"
+    />
+    <p class="card-text"></p>
+  </div>
+  <div class="card">
+    <h3 class="card-title">
+      <a target="_blank" href="https://masonbybee.github.io/Connect4/"
+        >Connect Four</a
+      >
+    </h3>
+    <img
+      class="card-img"
+      src="/static/assets/Portfolio/connectfour.PNG"
+      alt="Picture of Connect Four"
+    />
+    <p class="card-text"></p>
+  </div>
+</div>
+<section>
+  <h2 id="contact">Contact</h2>
+  <form id="contact-form">
+    <div class="form-div">
+      <label for="contact-name">Name</label>
+      <input
+        id="contact-name"
+        name="from_name"
+        type="text"
+        placeholder="First Name"
+      />
+      <label for="contact-email">Email</label>
+      <input
+        id="contact-email"
+        name="from_email"
+        type="email"
+        placeholder="Email"
+      />
+      <textarea name="message" cols="40" rows="5"></textarea>
+      <button>Submit</button>
+    </div>
+  </form>
+
+  <div id="contact-links">
+    <a href="https://www.linkedin.com/in/mason-bybee/"
+      ><i class="fa-brands fa-linkedin fa-2x"></i
+    ></a>
+    <a href="https://github.com/MasonBybee"
+      ><i class="fa-brands fa-square-github fa-2x"></i
+    ></a>
+    <a href="https://www.facebook.com/profile.php?id=100010349328017"
+      ><i class="fa-brands fa-square-facebook fa-2x"></i
+    ></a>
+    <a href="https://www.instagram.com/mason.bybee/"
+      ><i class="fa-brands fa-square-instagram fa-2x"></i
+    ></a>
+  </div>
+</section>
+{% endblock %} {% block scripts %}
+<script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+></script>
+<script type="text/javascript">
+  (function () {
+    emailjs.init("udEgTM_Anq5lfDH5u");
+  })();
+</script>
+<script
+  src="https://kit.fontawesome.com/a425a78511.js"
+  crossorigin="anonymous"
+></script>
+<script src="/static/index.js"></script>
+{% endblock %}
