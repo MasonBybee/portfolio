@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
   background: rgb(27, 196, 215);
@@ -8,16 +13,23 @@ body {
     rgba(8, 133, 237, 1) 58%,
     rgb(69, 106, 228) 100%
   );
+  object-fit: cover;
+  background-repeat: no-repeat;
   color: #313638;
 }
 
-/* .centered {
+.masonIMG {
   position: relative;
-  display: inline-block;
   left: 50%;
   transform: translate(-50%);
-  text-align: center;
-} */
+  background-repeat: no-repeat;
+  object-fit: cover;
+  border-radius: 10%;
+  border: 3px solid #313638;
+  width: 250px;
+  height: 250px;
+  margin-top: 300px;
+}
 
 body::-webkit-scrollbar {
   width: 0.6em;
@@ -67,19 +79,17 @@ a {
   font-weight: 700;
 }
 .greeting {
+  text-align: center;
   padding: 0;
   text-align: center;
-  margin-top: 80px;
+  margin-top: 20px;
   margin-bottom: 0px;
   font-size: 4em;
 }
 .title {
-  margin-top: 0px;
-  margin-bottom: 50px;
-}
-h2 {
   text-align: center;
-  margin-top: 75px;
+  margin-top: 0px;
+  margin-bottom: 300px;
 }
 
 .scrolled {
@@ -98,7 +108,7 @@ p {
   position: relative;
   left: 50%;
   transform: translate(-50%);
-  width: 60%;
+  width: 70%;
   font-size: 1.2em;
   text-align: center;
 }
@@ -120,22 +130,37 @@ html {
 .card {
   border-radius: 15px;
   color: #1bc4d7;
-  width: 200px;
+  width: 250px;
   height: auto;
   background-color: #313638;
   padding: 10px;
 }
 .card:hover {
-  padding: 30px;
+  outline: 2px solid white;
 }
 .card p {
   color: #1bc4d7;
+  width: 90%;
+}
+
+.text-container {
+  text-align: center;
+  scroll-margin-top: 100px;
+  position: relative;
+  padding: 20px;
+  left: 50%;
+  transform: translate(-50%);
+  width: 50%;
+  background-color: rgba(49, 54, 56, 1);
+  color: #1bc4d7;
+  border-radius: 50px;
+  margin-top: 125px;
+  margin-bottom: 50px;
 }
 
 .card-title {
+  font-size: 1.2em;
   text-align: center;
-}
-.card-title a {
   color: #1bc4d7;
 }
 .card-img {
@@ -145,7 +170,18 @@ html {
   max-width: 80%;
   height: auto;
 }
+
+.card-text a {
+  font-size: 1em;
+  font-weight: 100;
+  text-decoration: underline;
+  color: #1bc4d7;
+}
+.card-text a:hover {
+  color: white;
+}
 .form-div {
+  margin-top: 100px;
   color: #1bc4d7;
   background-color: #313638;
   position: relative;
@@ -163,11 +199,16 @@ html {
   display: inline-block;
   left: 50%;
   transform: translate(-50%);
-  width: 70px;
+  width: 100px;
   cursor: pointer;
+  background-color: #1bc4d7;
+  color: #313638;
+  border: 2px solid #1bc4d7;
 }
 .form-div button:hover {
-  width: 75px;
+  background-color: #313638;
+  color: #1bc4d7;
+  border: 2px solid #1bc4d7;
 }
 #contact-links {
   position: relative;
@@ -177,25 +218,41 @@ html {
   width: 30%;
   justify-content: space-evenly;
   margin-top: 50px;
+  margin-bottom: 75px;
+}
+
+#contact {
+  text-align: center;
+}
+
+.contact-inputs {
+  left: 50%;
+  transform: translate(-50%);
+  position: relative;
+  max-width: 450px;
+  min-width: 450px;
 }
 
 .contact-message {
-  position: relative;
   display: block;
-  height: 200px;
+  height: 150px;
+  min-height: 150px;
 }
 
-/* Media Queries */
 @media only screen and (max-width: 600px) {
   nav#mobileNav {
     display: flex;
-    top: 5px;
     justify-content: flex-end;
     position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 98%;
+    top: 5px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 0 1%;
+    transform: none;
+    z-index: 2000;
   }
+
   .mobileMenuBtn {
     padding: 5px 8px;
     font-size: 1.4em;
@@ -214,7 +271,6 @@ html {
     margin: 0;
     border-radius: 5px;
     overflow: hidden;
-    /* Animation Styles */
     transition: 0.4s all ease-in-out;
   }
   .mobileNavOl li {
@@ -223,9 +279,6 @@ html {
     text-align: left;
     font-size: 0.8em;
     border-bottom: 1px solid #ccc;
-
-    /* Animation Styles */
-    /* transition: .5s all ease-in-out; */
     transform: translateX(100%);
   }
 
@@ -240,8 +293,6 @@ html {
     color: #000;
   }
 
-  /* Dropdown effect */
-
   .mobileMenuBtn:hover {
     background-color: #fff;
   }
@@ -249,9 +300,42 @@ html {
     visibility: visible;
     transform: translateX(0%);
   }
-  /* End Dropdown Effect */
 
   nav#mainNav {
     display: none;
+  }
+
+  .form-div {
+    width: 90%;
+  }
+
+  .text-container {
+    width: 90%;
+  }
+
+  .contact-inputs {
+    max-width: 80%;
+    min-width: 80%;
+  }
+
+  #contact-links {
+    width: 60%;
+  }
+
+  .card-container {
+    column-gap: 5px;
+    width: 90%;
+  }
+  .card {
+    height: fit-content;
+    width: 50%;
+    min-height: 60%;
+  }
+  p {
+    width: 95%;
+  }
+
+  .masonIMG {
+    margin-top: 100px;
   }
 }
