@@ -1,112 +1,119 @@
-{% extends 'base.html' %} {% block css%}
+{% macro workCard(data) -%}
+<div class="card">
+  <h3 class="card-title">{{data.title}}</h3>
+  <img class="card-img" src="{{data.img_src}}" alt="{{data.img_alt}}" />
+  <p class="card-text">{{data.text}}</p>
+  <p class="card-text">
+    <a target="_blank" href="{{data.github_link}}">Github</a>
+  </p>
+  <p class="card-text">
+    <a target="_blank" href="{{data.website_link}}"
+      >{{data.website_link_title}}</a
+    >
+  </p>
+</div>
+{%- endmacro %} {% macro funCard(data) -%}
+<div class="card">
+  <h3 class="card-title">{{data.title}}</h3>
+  <img class="card-img" src="{{data.img_src}}" alt="{{data.img_alt}}" />
+  <p class="card-text">
+    <a target="_blank" href="{{data.github_link}}">Github</a>
+  </p>
+  {% if data.website_link %}
+  <p class="card-text">
+    <a class="mt-2" target="_blank" href="{{data.website_link}}">Play</a>
+  </p>
+  {% endif%}
+</div>
+{%- endmacro %}{% extends 'base.html' %} {% block css%}
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+  crossorigin="anonymous"
+/>
 <link rel="stylesheet" href="/static/index.css" />
 {% endblock %}{%block title%}Mason Bybee{% endblock %} {% block content %}
+<img class="masonIMG" src="/static/assets/Portfolio/IMG_2203.jpg" alt="" />
 <h1 class="greeting">Hello, I'm Mason</h1>
-<h2 class="title">Full-Stack Developer</h2>
-<h2 id="about">About Me</h2>
-<p>
-  &emsp; Hello! I'm Mason Bybee, a Full-Stack Developer. Though my journey into
-  coding is relatively recent, my background with computers is extensive and
-  rooted in a technology-focused upbringing. My interest in computers sparked at
-  a young age, leading me to build my own desktop computer by the age of 11. At
-  14, I delved into HTML and CSS, laying the groundwork for my technical skills,
-  though I didn't fully explore their potential at the time.
-</p>
-<p>
-  &emsp; My pivotal moment unfolded in early 2023. Confronted with a stagnant
-  career path, I made a decisive shift towards Software Development. This
-  transition reignited my passion for learning and led to a rapid expansion of
-  my technical skillset. I've not only refreshed my knowledge of HTML and CSS,
-  but I've also picked up a variety of programming languages and development
-  tools including JavaScript, React, express, Python, Flask, Pygame, Terminal,
-  and Git, among others. My ambition doesn't stop here; I am continually
-  striving to master new languages and refine my coding practices. My ultimate
-  goal is to channel these skills and experiences into becoming a proficient
-  Game Developer.
-</p>
-<h2 id="work">Work</h2>
-<p>Below are projects displaying my skills in web development</p>
-<div class="card-container">
-  <div class="card">
-    <h3 class="card-title">
-      <a target="_blank" href="http://172.232.10.66/">Pour & Explore</a>
-    </h3>
-    <img
-      class="card-img"
-      src="/static/assets/Portfolio/pour&Expore.PNG"
-      alt="Picture of Pour & Explore cocktail finder"
-    />
-    <p class="card-text">
-      Find new and exciting cocktails with my first capstone project!
-    </p>
-  </div>
+<h2 class="title">Full-Stack Web Developer</h2>
+<div id="about" class="text-container my-5">
+  <h2 class="my-3">About Me</h2>
+  <p>
+    Hello! I'm Mason Bybee, a Full-Stack Developer. Though my journey into
+    coding is relatively recent, my background with computers is extensive and
+    rooted in a technology-focused upbringing. My interest in computers sparked
+    at a young age, leading me to build my own desktop computer by the age of
+    11. At 14, I delved into HTML and CSS, laying the groundwork for my
+    technical skills, though I didn't fully explore their potential at the time.
+  </p>
+  <p>
+    My pivotal moment unfolded in early 2023. Confronted with a stagnant career
+    path, I made a decisive shift towards Software Development. This transition
+    reignited my passion for learning and led to a rapid expansion of my
+    technical skillset. I've not only refreshed my knowledge of HTML and CSS,
+    but I've also picked up a variety of programming languages and development
+    tools including JavaScript, React, express, Python, Flask, Pygame, Terminal,
+    and Git, among others. My ambition doesn't stop here; I am continually
+    striving to master new languages and refine my coding practices. My ultimate
+    goal is to channel these skills and experiences into becoming a proficient
+    Game Developer.
+  </p>
 </div>
-<h2 id="fun">Fun</h2>
-<p>
-  These are a few projects I've made to challenge myself and have something fun
-  as the end result
-</p>
+<div id="work" class="text-container">
+  <h2 class="mt-2">Work</h2>
+  <p>Below are my projects displaying my skills in web development</p>
+</div>
 <div class="card-container">
-  <div class="card">
-    <h3 class="card-title">
-      <a target="_blank" href="https://masonbybee.github.io/lightsout/"
-        >Lights Out</a
-      >
-    </h3>
-    <img
-      class="card-img"
-      src="/static/assets/Portfolio/lightsoout.PNG"
-      alt="Picture of Lights Out"
-    />
-    <p class="card-text"></p>
-  </div>
-  <div class="card">
-    <h3 class="card-title">
-      <a target="_blank" href="https://github.com/MasonBybee/Snake"
-        >Snake(WIP)</a
-      >
-    </h3>
-    <img
-      class="card-img"
-      src="/static/assets/Portfolio/snake.PNG"
-      alt="Picture of Snake Game"
-    />
-    <p class="card-text"></p>
-  </div>
-  <div class="card">
-    <h3 class="card-title">
-      <a target="_blank" href="https://masonbybee.github.io/Connect4/"
-        >Connect Four</a
-      >
-    </h3>
-    <img
-      class="card-img"
-      src="/static/assets/Portfolio/connectfour.PNG"
-      alt="Picture of Connect Four"
-    />
-    <p class="card-text"></p>
-  </div>
+  {%for card in work_cards %}{{workCard(card)}}{% endfor %}
+</div>
+<div id="fun" class="text-container">
+  <h2>Fun</h2>
+  <p>
+    These are a few projects I've made to challenge myself and have something
+    fun as the end result
+  </p>
+</div>
+<div class="card-container">
+  {% for card in fun_cards %} {{funCard(card)}}{% endfor %}
 </div>
 <section>
-  <h2 id="contact">Contact</h2>
   <form id="contact-form">
     <div class="form-div">
-      <label for="contact-name">Name</label>
-      <input
-        id="contact-name"
-        name="from_name"
-        type="text"
-        placeholder="First Name"
-      />
-      <label for="contact-email">Email</label>
-      <input
-        id="contact-email"
-        name="from_email"
-        type="email"
-        placeholder="Email"
-      />
-      <textarea name="message" cols="40" rows="5"></textarea>
-      <button>Submit</button>
+      <h2 class="mt-2" id="contact">Contact</h2>
+      <div class="form-group mt-4">
+        <label for="contact-name">Your full name:</label>
+        <br />
+        <input
+          class="contact-inputs mt-2"
+          id="contact-name"
+          name="from_name"
+          type="text"
+          placeholder="Jane Doe"
+        />
+      </div>
+      <div class="form-group mt-4">
+        <label for="contact-email">Your email address:</label>
+        <br />
+        <input
+          class="contact-inputs mt-2"
+          id="contact-email"
+          name="from_email"
+          type="email"
+          placeholder="example@example.com"
+        />
+      </div>
+      <div class="form-group mt-4">
+        <label for="message">Your message:</label>
+        <br />
+        <textarea
+          class="contact-message contact-inputs mt-2"
+          placeholder="Hello, I wanted to reach out for..."
+          name="message"
+          rows="5"
+        ></textarea>
+      </div>
+      <button class="btn btn-primary mt-4">Submit</button>
     </div>
   </form>
 
