@@ -2,6 +2,8 @@ const navBar = document.querySelector(".navOl");
 const mobileMenuList = document.querySelectorAll(".mobileNavOl li");
 const mobileMenuBtn = document.querySelector(".mobileMenuBtn");
 const form = document.querySelector("form");
+const mobileNav = document.querySelector(".mobileNavOl");
+
 document.addEventListener("scroll", function () {
   let scrollcheck = window.scrollY;
   if (scrollcheck > 0) {
@@ -16,9 +18,9 @@ mobileMenuList.forEach((li, i) => {
 });
 
 mobileMenuBtn.addEventListener("click", function () {
-  const nav = document.querySelector(".mobileNavOl");
-  nav.style.visibility =
-    nav.style.visibility === "visible" ? "hidden" : "visible";
+  const isVisible = mobileNav.style.right === "0px";
+  mobileNav.style.right = isVisible ? "-100%" : "0"; // Toggle between off-screen and on-screen
+  mobileNav.style.visibility = isVisible ? "hidden" : "visible"; // Manage visibility in sync
 });
 
 function sendemail() {
@@ -27,7 +29,7 @@ function sendemail() {
       console.log("SUCCESS!", response.status, response.text);
     },
     function (error) {
-      console.log("FAILED...", error);
+      console.error("FAILED...", error);
     }
   );
 }
