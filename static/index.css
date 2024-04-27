@@ -108,39 +108,14 @@ p {
   position: relative;
   left: 50%;
   transform: translate(-50%);
-  width: 70%;
+  width: 95%;
   font-size: 1.2em;
   text-align: center;
+  color: #d3d3d3;
 }
 
 html {
   scroll-behavior: smooth;
-}
-.card-container {
-  position: relative;
-  width: 70%;
-  left: 50%;
-  transform: translate(-50%);
-  display: flex;
-  flex-direction: row;
-  column-gap: 20px;
-  justify-content: center;
-  height: 400px;
-}
-.card {
-  border-radius: 15px;
-  color: #1bc4d7;
-  width: 250px;
-  height: auto;
-  background-color: #313638;
-  padding: 10px;
-}
-.card:hover {
-  outline: 2px solid white;
-}
-.card p {
-  color: #1bc4d7;
-  width: 90%;
 }
 
 .text-container {
@@ -151,18 +126,51 @@ html {
   left: 50%;
   transform: translate(-50%);
   width: 50%;
-  background-color: rgba(49, 54, 56, 1);
+  background-color: #313638;
   color: #1bc4d7;
   border-radius: 50px;
   margin-top: 125px;
   margin-bottom: 50px;
 }
 
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 95%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  gap: 20px;
+  justify-content: space-around;
+  align-items: start;
+  align-content: start;
+}
+
+.card {
+  border-radius: 15px;
+  color: #1bc4d7;
+  background-color: #1a1a1a;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  padding: 10px;
+  min-width: 200px;
+  max-width: 260px;
+  height: auto;
+}
+.card:hover {
+  outline: 2px solid white;
+  transform: translateY(-5px);
+}
+.card p {
+  color: #d3d3d3;
+  width: 90%;
+}
+
 .card-title {
   font-size: 1.2em;
   text-align: center;
-  color: #1bc4d7;
 }
+
 .card-img {
   position: relative;
   left: 50%;
@@ -180,6 +188,7 @@ html {
 .card-text a:hover {
   color: white;
 }
+
 .form-div {
   margin-top: 100px;
   color: #1bc4d7;
@@ -187,12 +196,16 @@ html {
   position: relative;
   left: 50%;
   transform: translate(-50%);
-  width: 40%;
+  width: 50%;
+  max-width: 800px;
   display: flex;
   border-radius: 30px;
   flex-direction: column;
   padding: 20px;
   border: 1px solid black;
+}
+.form-div label {
+  color: #d3d3d3;
 }
 .form-div button {
   position: relative;
@@ -217,8 +230,8 @@ html {
   display: flex;
   width: 30%;
   justify-content: space-evenly;
-  margin-top: 50px;
-  margin-bottom: 75px;
+  margin-top: 100px;
+  bottom: 50px;
 }
 
 #contact {
@@ -226,17 +239,28 @@ html {
 }
 
 .contact-inputs {
-  left: 50%;
-  transform: translate(-50%);
+  text-align: center;
   position: relative;
-  max-width: 450px;
-  min-width: 450px;
+  max-width: 90%;
+  min-width: 90%;
 }
 
 .contact-message {
-  display: block;
+  text-align: center;
   height: 150px;
   min-height: 150px;
+}
+
+@media only screen and (max-width: 1450px) {
+  .text-container {
+    width: 75%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .text-container {
+    width: 85%;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -254,6 +278,8 @@ html {
   }
 
   .mobileMenuBtn {
+    background-color: rgba(255, 255, 255, 80%);
+    backdrop-filter: blur(5px);
     padding: 5px 8px;
     font-size: 1.4em;
     border-radius: 8px;
@@ -267,15 +293,22 @@ html {
     list-style: none;
     top: 100%;
     padding: 0;
-    right: 0;
+    right: 2%;
     margin: 0;
     border-radius: 5px;
     overflow: hidden;
-    transition: 0.4s all ease-in-out;
+    transition: visibility 0.4s, transform 0.4s ease-in-out;
+    transform: translateX(150%); /* Start offscreen */
   }
+
+  .mobileNavVisible {
+    visibility: visible;
+    transform: translateX(0%); /* Move onscreen*/
+  }
+
   .mobileNavOl li {
-    visibility: hidden;
-    background-color: #fff;
+    visibility: collapse;
+    background-color: white;
     text-align: left;
     font-size: 0.8em;
     border-bottom: 1px solid #ccc;
@@ -285,7 +318,7 @@ html {
   .mobileNavOl li a {
     display: block;
     padding: 5px 8px;
-    color: #333;
+    color: #313638;
     transition: 0.4s all;
   }
   .mobileNavOl li a:hover {
@@ -310,6 +343,7 @@ html {
   }
 
   .text-container {
+    height: fit-content;
     width: 90%;
   }
 
@@ -322,20 +356,18 @@ html {
     width: 60%;
   }
 
-  .card-container {
-    column-gap: 5px;
-    width: 90%;
-  }
-  .card {
-    height: fit-content;
-    width: 50%;
-    min-height: 60%;
-  }
-  p {
-    width: 95%;
+  .card:hover {
+    transform: none;
+    outline: none;
   }
 
   .masonIMG {
     margin-top: 100px;
+  }
+}
+
+@media only screen and (max-width: 535px) {
+  .card {
+    height: fit-content;
   }
 }
