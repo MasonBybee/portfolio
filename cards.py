@@ -19,17 +19,17 @@ fun_cards = [
         "website_link": "https://masonbybee.github.io/lightsout/",
     },
     {
-        "title": "Pygame Snake(WIP)",
-        "img_src": "/static/assets/Portfolio/snake.PNG",
-        "img_alt": "Picture of Pygame Snake Game",
-        "github_link": "https://github.com/MasonBybee/Snake",
-        "website_link": "",
-    },
-    {
         "title": "Connect Four",
         "img_src": "/static/assets/Portfolio/connectfour.PNG",
         "img_alt": "Picture of Connect Four",
         "github_link": "https://github.com/MasonBybee/Connect4",
         "website_link": "https://masonbybee.github.io/Connect4/",
+    },
+    {
+        "title": "Pygame Snake (WIP)",
+        "img_src": "/static/assets/Portfolio/snake.PNG",
+        "img_alt": "Picture of Pygame Snake Game",
+        "github_link": "https://github.com/MasonBybee/Snake",
+        "website_link": "",
     },
 ]
